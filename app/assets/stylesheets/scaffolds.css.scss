@@ -1,0 +1,33 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body {  line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+body{ font: 16px/1.5 'Open Sans', sans-serif; padding: 40px;}
+a{ color: cornflowerblue;}
+h1{ font-size: 24px; margin-bottom: 1em;}
+.album{ width: 100%;}
+.album:nth-child(2n){ background: #eee;}
+.album:hover{ background: cornflowerblue; color: white;}
+.album:hover .edit,
+.album:hover .wiki{ color: white;}
+.album p{ float: left;}
+.artist{ width: 30%;}
+.name{ width: 40%;}
+.year{ width: 10%;}
+.rate{ width: 10%;}
+.rate a{ background: #eee; display: inline-block; height: 24px; line-height: 24px; text-align: center; text-decoration: none; width: 24px;}
+.rate a:hover{ background: cornflowerblue; color: white;}
+.rate .on:first-child,{ background: yellowgreen; color: white;}
+.rate .on:nth-child(2){ background: orange; color: white;}
+.rate .on:nth-child(3){ background: orangered; color: white;}
+.rating{ width: 10%;}
+
+.sortable .drag{ cursor: move;}
+table{ width: 100%;}
+th{ background: #eee; color: #999; text-align: left;}
+tr{ width: 100%;}
+.ui-sortable-helper{ background: #eee;}

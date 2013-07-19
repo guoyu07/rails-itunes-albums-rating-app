@@ -1,0 +1,31 @@
+<h1><%= link_to_unless_current 'Home', root_path %> <%= link_to_unless_current '10', list_path(rating: 10) %> <%= link_to_unless_current '9', list_path(rating: 9) %> <%= link_to_unless_current '8', list_path(rating: 8) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Artist</th>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Position</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody class="sortable" data-sort-url="<%= sort_albums_url %>">
+    <% @albums.each do |album| %>
+      <tr id="sort_album_<%= album.id %>">
+        <td><span class="drag">[+]</span></td>
+        <td><%= album.artist %></td>
+        <td><%= album.name %></td>
+        <td><%= album.year %></td>
+        <td><%= album.position %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

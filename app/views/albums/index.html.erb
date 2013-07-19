@@ -1,0 +1,27 @@
+<h1><%= link_to_unless_current 'Home', root_path %> <%= link_to_unless_current '10', list_path(rating: 10) %> <%= link_to_unless_current '9', list_path(rating: 9) %> <%= link_to_unless_current '8', list_path(rating: 8) %></h1>
+
+<% @albums.each do |album| %>
+  <div class="album">
+    <p class="artist"><%= album.artist %></p>
+    <p class="name"><%= album.name %></p>
+    <p class="year"><%= album.year %></p>
+    <p class="rate" id="<%= album.id %>">
+      <% if album.rating == 8 %>
+        <%= link_to '8', album, data: { rating: '8' }, class: 'on' %><%= link_to '9', album, data: { rating: '9' } %><%= link_to '10', album, data: { rating: '10' } %><%= link_to '-', album, class: 'remove' %>
+      <% elsif album.rating == 9 %>
+        <%= link_to '8', album, data: { rating: '8' } %><%= link_to '9', album, data: { rating: '9' }, class: 'on' %><%= link_to '10', album, data: { rating: '10' } %><%= link_to '-', album, class: 'remove' %>
+      <% elsif album.rating == 10 %>
+        <%= link_to '8', album, data: { rating: '8' } %><%= link_to '9', album, data: { rating: '9' } %><%= link_to '10', album, data: { rating: '10' }, class: 'on' %><%= link_to '-', album, class: 'remove' %>
+      <% else %>
+        <%= link_to '8', album, data: { rating: '8' } %><%= link_to '9', album, data: { rating: '9' } %><%= link_to '10', album, data: { rating: '10' } %><%= link_to '-', album, class: 'remove' %>
+      <% end %>
+    </p>
+    <p>
+      <%= link_to 'Edit', edit_album_path(album), class: 'edit' %>
+      <%= link_to 'Wiki', 'http://en.wikipedia.org/w/index.php?search=' + album.name, class: 'wiki', target: '_blank' %>
+    </p>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>
+
+<%= link_to 'New Album', new_album_path %>
