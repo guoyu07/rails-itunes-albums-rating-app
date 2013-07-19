@@ -21,3 +21,11 @@ Simple app for rating your iTunes albums.
 * Setup your 'Albums' database using the provided schema
 * Run rake import:itunes. It will use your 'itunes.txt' to import your albums, by avoiding duplicates.
 * Run your server. You'll be able to rate your albums from 8 to 10. Feel free to add more options.
+
+## Sorting
+
+For albums rated 8 to 10, you can sort them by accessing /list/10 for example. It uses the 'sortable' feature of the jQuery UI library.
+
+## To-Do
+
+* Working on a way to export your favorite albums in a clean HTML format. Example: [http://jthom.as/culture/albums](http://jthom.as/culture/albums)
